@@ -6,8 +6,25 @@ import Modal from './components/Modal';
 
 function App() {
 
-const [add, setAdd] = useState(false)
-const [data, setData ] = useState([])
+const [add, setAdd] = useState(false);
+
+
+const [data, setData ] = useState([]);
+
+
+
+
+const toDos = ( event)=>{
+  setData((prevData )=>{
+      return [...prevData, event ]
+  })
+}
+
+
+
+
+
+
 
 
 
@@ -15,6 +32,9 @@ const addtodo = ( )=>{
   setAdd(true);
 }
 
+const modalTodo = ( )=>{
+  setAdd(false);
+}
 
 
 
@@ -26,7 +46,7 @@ const addtodo = ( )=>{
       <ToDoCard />
       <ToDoCard />
 
-     {add && <Modal/>}
+     {add && <Modal toDos = {toDos} modalTodo ={modalTodo}/>}
       
     </div>
   );

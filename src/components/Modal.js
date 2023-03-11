@@ -2,11 +2,11 @@
 import '../styles/Modal.css';
 import Form from '../components/Form'
 
-const Modal = ({handleModal}) => {
+const Modal = ({toDos, modalTodo}) => {
     return (
         <div className="backdrop">
             <div className="modal">
-               <Form/>
+               <Form toDos = {toDos} addtodo={modalTodo}/>
             </div>
         </div>
 

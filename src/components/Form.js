@@ -2,9 +2,38 @@ import { useState } from "react";
 import '../styles/Form.css';
 
 
-const Form = () => {
+const Form = ({toDos, addtodo}) => {
 
   
+  const [title, setTitle] = useState('');
+  const [date, setDate] = useState('');
+
+
+  
+// formReset
+
+const formReset = ()=>{
+    setTitle('')
+    setDate('')
+}
+
+
+//   get data from the form on submit
+  const getData = ( event)=>{
+
+    event.preventDefault();
+  
+    const todo = {
+      title: title, 
+      date: date
+    }
+    toDos(todo);
+    console.log(todo);
+    addtodo();
+    
+    formReset();
+  
+  }
 
 
 
@@ -12,13 +41,13 @@ const Form = () => {
 
     return (  
 
-        <form className="form">
+        <form className="form" onSubmit={getData} >
             <h2>Don't Just Add It! Come Back Later!</h2>
             <br />
             <label >
 
                 <span>Title </span>
-                <input type="text"  />
+                <input type="text" onChange={e => setTitle(e.target.value) }  value={title}  />
 
             </label>
 
@@ -26,12 +55,12 @@ const Form = () => {
             <label >
 
                 <span>Due   </span>
-                <input type="date"/>
+                <input type="date" onChange={e => setDate(e.target.value)} value={date}/>
 
             </label>
             <br />
             
-            <button>Add</button>
+            <button  >Add</button>
            
 
 
