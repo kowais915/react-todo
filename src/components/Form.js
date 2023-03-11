@@ -7,6 +7,7 @@ const Form = ({toDos, addtodo}) => {
   
   const [title, setTitle] = useState('');
   const [date, setDate] = useState('');
+  const [description, setDescription] = useState('');
 
 
   
@@ -24,7 +25,8 @@ const formReset = ()=>{
     event.preventDefault();
   
     const todo = {
-      title: title, 
+      title: title,
+      description: description, 
       date: date
     }
     toDos(todo);
@@ -51,7 +53,19 @@ const formReset = ()=>{
 
             </label>
 
+
+
             <br></br>
+
+
+            <label >
+
+                <span>Description </span>
+                <textarea type="text" onChange={e => setDescription(e.target.value) }  value={description}  />
+
+            </label>
+
+            <br />
             <label >
 
                 <span>Due   </span>

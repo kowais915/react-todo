@@ -16,3 +16,8 @@ input{
     padding: 10px;
   }
   
+
+textarea{
+    width: 400px;
+    padding: 10px;
+}

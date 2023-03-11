@@ -49,7 +49,7 @@ const modalTodo = ( )=>{
       <Navbar add = {addtodo} deleteAll={deleteAll}/>
       {data.map((item)=>{
         return(
-          <ToDoCard title={item.title} date ={item.date} />
+          <ToDoCard title={item.title} date ={item.date} description={item.description} />
         )
       })}
 
