@@ -23,6 +23,10 @@ const toDos = ( event)=>{
 
 
 
+const deleteAll = ()=>{
+  setData([])
+}
+
 
 
 
@@ -42,9 +46,12 @@ const modalTodo = ( )=>{
   return (
     <div className="App">
 
-      <Navbar add = {addtodo}/>
-      <ToDoCard />
-      <ToDoCard />
+      <Navbar add = {addtodo} deleteAll={deleteAll}/>
+      {data.map((item)=>{
+        return(
+          <ToDoCard title={item.title} date ={item.date} />
+        )
+      })}
 
      {add && <Modal toDos = {toDos} modalTodo ={modalTodo}/>}
       

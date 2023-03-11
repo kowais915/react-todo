@@ -1,7 +1,7 @@
 import {Link } from 'react-router-dom';
 import '../styles/Navbar.css';
 
-const Navbar = ({add}) => {
+const Navbar = ({add, deleteAll}) => {
     return ( 
 
         <nav>
@@ -18,6 +18,7 @@ const Navbar = ({add}) => {
                     
            
            <button className='add' onClick={add}>Add</button>
+           <button className='add' onClick={deleteAll}>Delete All</button>
             
         </nav>
      );
