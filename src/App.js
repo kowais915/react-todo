@@ -1,32 +1,46 @@
-import { useState } from 'react';
-import ToDoCard from './components/ToDoCard';
-import Navbar from './components/Navbar';
+import Form from './components/Form';
 import Modal from './components/Modal';
+import { useState } from 'react';
+import LoginModal from './components/LoginModal';
+import ToDoCard from './components/ToDoCard';
 
 
 function App() {
-
-const [add, setAdd] = useState(false)
+const [modal, setModal ] = useState(false);
+const [events, setEvents ] = useState({});
+const [loginModal, setLoginModal ] = useState(false);
 const [data, setData ] = useState([])
 
 
 
-const addtodo = ( )=>{
-  setAdd(true);
+
+
+
+const show = ( )=>{
+  setModal(true)
 }
 
 
+const showLogin =( )=>{
+  setLoginModal(true);
+}
 
+
+  const handleModal = ( )=>{
+      setModal(false)
+  }
+
+
+  const handleLogin = ( )=>{
+    setLoginModal(false)
+  }
 
 
   return (
     <div className="App">
-
-      <Navbar add = {addtodo}/>
+      
       <ToDoCard />
       <ToDoCard />
-
-     {add && <Modal/>}
       
     </div>
   );

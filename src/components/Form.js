@@ -1,10 +1,33 @@
 import { useState } from "react";
-import '../styles/Form.css';
 
 
 const Form = () => {
 
-  
+    const[name, setName ] = useState('');
+    const[date, setDate ] = useState('');
+    const[data, setData ] = useState({});
+
+
+    const formReset =()=>{
+        setName('')
+        setDate('')
+    }
+
+    const formData = (e)=>{
+
+        e.preventDefault()
+        
+        const event = {
+            name: name, 
+            date: date,
+            id: Math.floor(Math.random()*10000)
+        }
+
+        console.log(event);
+        formReset()
+    }
+
+
 
 
 
@@ -12,26 +35,24 @@ const Form = () => {
 
     return (  
 
-        <form className="form">
-            <h2>Don't Just Add It! Come Back Later!</h2>
-            <br />
+        <form className="form" onSubmit={formData}>
+            <h1>Welcome Back!</h1>
             <label >
 
-                <span>Title </span>
-                <input type="text"  />
+                <span>Name </span>
+                <input type="text" onChange={(e)=> setName(e.target.value)} value={name}/>
 
             </label>
 
             <br></br>
             <label >
 
-                <span>Due   </span>
-                <input type="date"/>
+                <span>Date   </span>
+                <input type="date" onChange={e => setDate(e.target.value)} value={date}/>
 
             </label>
-            <br />
             
-            <button>Add</button>
+            <button>Submit</button>
            
 
 
