@@ -17,8 +17,10 @@ const Navbar = ({add, deleteAll}) => {
 
                     
            
-           <button className='add' onClick={add}>Add</button>
-           <button className='add' onClick={deleteAll}>Delete All</button>
+           <div className="buttons">
+                <button className='add' onClick={add}>Add</button>
+                <button className='add' onClick={deleteAll}>Delete All</button>
+           </div>
             
         </nav>
      );
