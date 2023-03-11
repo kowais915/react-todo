@@ -1,17 +1,19 @@
 import Form from './components/Form';
 import Modal from './components/Modal';
 import { useState } from 'react';
+import LoginModal from './components/LoginModal';
+import ToDoCard from './components/ToDoCard';
 
 
 function App() {
 const [modal, setModal ] = useState(false);
-const [events, setEvents ] = useState({})
+const [events, setEvents ] = useState({});
+const [loginModal, setLoginModal ] = useState(false);
+const [data, setData ] = useState([])
 
-const time = ( )=>{
-  for(let i = 0; i<10000; i++){
-    console.log(i)
-  }
-}
+
+
+
 
 
 const show = ( )=>{
@@ -19,14 +21,27 @@ const show = ( )=>{
 }
 
 
+const showLogin =( )=>{
+  setLoginModal(true);
+}
+
+
   const handleModal = ( )=>{
       setModal(false)
   }
+
+
+  const handleLogin = ( )=>{
+    setLoginModal(false)
+  }
+
+
   return (
     <div className="App">
-      <Form/>
-      <button onClick={show}>Show Modal</button>
-      {modal && <Modal handleModal = {handleModal}/>}
+      
+      <ToDoCard />
+      <ToDoCard />
+      
     </div>
   );
 }

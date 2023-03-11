@@ -21,3 +21,19 @@
 
 }
 
+.loginModal{
+    max-width: 400px;
+    margin: 500px auto;
+    padding: 50px;
+    border: teal 4px solid;
+    color: black;
+    background-color: white;
+    
+}
+
+.loginModal input{
+    width: 100%;
+    padding: 10px;
+    border: teal solid 2px;
+}
+
