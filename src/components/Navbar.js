@@ -20,6 +20,7 @@ const Navbar = ({add, deleteAll}) => {
            <div className="buttons">
                 <button className='add' onClick={add}>Add</button>
                 <button className='add' onClick={deleteAll}>Delete All</button>
+               
            </div>
             
         </nav>
